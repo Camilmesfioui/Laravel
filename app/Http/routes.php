@@ -33,7 +33,10 @@ Route::group(['middleware' => 'web'], function () {
         return view('welcome');
     });
 
-    Route::resource('/contact', 'ContactController');
+    Route::get('contact',
+        ['as' => 'contact', 'uses' => 'ContactController@create']);
+    Route::post('contact',
+        ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 
     Route::resource('/post', 'PostController');
 
