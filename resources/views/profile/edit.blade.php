@@ -8,7 +8,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Modifier mon profil
+                        <h4>Modifier mon profil</h4>
                     </div>
                     <div class="panel-body">
 

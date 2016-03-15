@@ -7,7 +7,7 @@
                 @include('errors.message')
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Soumettre un projet
+                        <h4>Soumettre un projet</h4>
                     </div>
 
                     <div class="panel-body">

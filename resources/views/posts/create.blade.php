@@ -7,7 +7,7 @@
                 @include('errors.message')
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Ajouter un article
+                        <h4>Ajouter un article</h4>
                     </div>
 
                     <div class="panel-body">

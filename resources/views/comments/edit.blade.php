@@ -6,7 +6,9 @@
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
                 <div class="panel panel-default">
-                    <div class="panel-heading">Modifier commentaire</div>
+                    <div class="panel-heading">
+                        <h4>Modifier commentaire</h4>
+                    </div>
                         <div class="panel-body">
                             @if(Auth::check()
                                 && (Auth::user()->id == $comment->user_id
