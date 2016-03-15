@@ -25,8 +25,7 @@
                             ]) !!}
                             <div class="col-md-5">
                                 {!! Form::text('name', old('name'), [
-                                'class' => 'form-control',
-                                'readonly' => 'readonly'
+                                'class' => 'form-control'
                                 ])
                             !!}
                             </div>
@@ -38,18 +37,21 @@
                             ]) !!}
                             <div class="col-md-5">
                                 {!! Form::email('email', old('email'), [
-                                'class' => 'form-control',
-                                'readonly' => 'readonly'
+                                'class' => 'form-control'
                                 ])
                             !!}
                             </div>
                         </div>
 
                         <div class="text-center">
-                            <a href="{{ route('profile.edit', Auth::user()->id) }}">Modifier mon profil</a>
+                            {!! Form::submit('Enregistrer modifications',
+                                ['class' => 'btn btn-primary'])
+                            !!}
                         </div>
 
                         {!! Form::close() !!}
+
+                        <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
                     </div>
                 </div>
             </div>
