@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Illuminate\Support\Facades\Mail;
+
 class ContactController extends Controller
 {
     /**
@@ -25,7 +27,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.index');
     }
 
     /**
@@ -36,7 +38,18 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mail::send('contact.contact',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'user_message' => $request->get('message')
+            ), function($message)
+            {
+                $message->from('camil.mesfioui@gmail.com');
+                $message->to('mesfioui.camil@gmail.com', 'Admin')->subject('Coucou');
+            });
+
+        return \Redirect::route('contact')->with('success', 'Merci de nous avoir contacté !');
     }
 
     /**
