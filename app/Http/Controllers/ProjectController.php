@@ -116,7 +116,7 @@ class ProjectController extends Controller
         $input = $request->input();
         $project->fill($input)->save();
 
-        return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
+        return redirect()->route('project.index')->with('success', 'Votre modification a bien étée prise en compte');
     }
 
     /**
