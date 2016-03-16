@@ -10,6 +10,9 @@
                         <a href="{{ route('post.show', $post->id) }}">
                             <h4>{{ $post->title }}</h4>
                         </a>
+                        <div class="text-right">
+                            <h5>{{ $post->created_at }}</h5>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <p>{{$post->content}}</p>

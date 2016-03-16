@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>{{ $project->project_name }}</h4>
-                    <h5 class="text-right">{{$project->status}}</h5>
+                    <h4 class="text-right">{{$project->status}}</h4>
                 </div>
                 <div class="panel-body">
                     <h3>Informations du client</h3>

@@ -8,6 +8,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3>{{ $post->title }}</h3>
+                        <div class="text-right">
+                            <h5>{{ $post->created_at }}</h5>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <p>{{ $post->content }}</p>
