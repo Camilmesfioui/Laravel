@@ -15,7 +15,8 @@ class ProfileController extends Controller
 
     public function __construct() {
 
-        $this->middleware('auth')->only(['show', 'edit']);
+        $this->middleware('auth')->only('show', 'edit');
+        $this->middleware('isadmin')->only('index');
 
     }
 
