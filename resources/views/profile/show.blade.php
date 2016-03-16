@@ -44,8 +44,19 @@
                             </div>
                         </div>
 
+                        {!! Form::close() !!}
+
+                        {!! Form::model($profile,
+                            array(
+                                'route' => array('profile.destroy', $profile->id),
+                                'method' => 'DELETE'))
+                        !!}
+
+
                         <div class="text-center">
-                            <a href="{{ route('profile.edit', Auth::user()->id) }}">Modifier mon profil</a>
+                            <a class="btn btn-warning" href="{{ route('profile.edit', Auth::user()->id) }}">Modifier mon profil</a>
+
+                            {!! Form::submit('Supprimer mon profil', ['class' => 'btn btn-danger']) !!}
                         </div>
 
                         {!! Form::close() !!}

@@ -103,7 +103,11 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $profile = User::findOrFail($id);
+
+        $profile->delete();
+
+        return redirect()->route('post.index')->with('success', 'Votre profil a bien été supprimé');
     }
 
 }
