@@ -71,7 +71,7 @@
                         <div class="text-center">
                             <p>Ce n'est pas votre profil</p>
                         </div>
-                        <a href="{{ route('profiles.show', Auth::user()->id) }}">Retour à mon profil</a>
+                        <a href="{{ route('profile.show', Auth::user()->id) }}">Retour à mon profil</a>
                     </div>
                 @endif
             </div>
