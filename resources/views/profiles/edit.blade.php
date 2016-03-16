@@ -43,6 +43,8 @@
                             </div>
                         </div>
 
+                        {!! Form::hidden('password', old('password')) !!}
+
                         <div class="text-center">
                             {!! Form::submit('Enregistrer modifications',
                                 ['class' => 'btn btn-primary'])

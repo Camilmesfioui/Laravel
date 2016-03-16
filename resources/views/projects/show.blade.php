@@ -68,7 +68,6 @@
                         <h4>Gérer le projet</h4>
                     </div>
                     <div class="panel-body">
-
                         <div class="text-center">
                             {!! Form::model($project,array(
                                 'route' => array('project.destroy', $project->id),
@@ -80,12 +79,17 @@
 
                             {!! Form::close() !!}
                         </div>
-
                     </div>
                     @endif
-                    <div class="panel-body">
-                        <a href="{{ route('project.index') }}">Retour à la liste des projets</a>
-                    </div>
+                    @if(Auth::user()->isAdmin)
+                        <div class="panel-body">
+                            <a href="{{ route('project.index') }}">Retour à la liste des projets</a>
+                        </div>
+                    @else
+                        <div class="panel-body">
+                            <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
