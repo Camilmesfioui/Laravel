@@ -43,8 +43,6 @@
                             </div>
                         </div>
 
-                        {!! Form::hidden('password', old('password')) !!}
-
                         <div class="text-center">
                             {!! Form::submit('Enregistrer modifications',
                                 ['class' => 'btn btn-primary'])
@@ -52,6 +50,14 @@
                         </div>
 
                         {!! Form::close() !!}
+
+                        <br>
+
+                        <div class="text-center">
+                            <a href="{{ url('edit_password', Auth::user()->id) }}">Modifier mon mot de passe</a>
+                        </div>
+
+                        <br>
 
                         <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
                     </div>

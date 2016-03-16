@@ -131,5 +131,5 @@ class ProjectController extends Controller
 
         return redirect()->route('project.index')->with('success', 'Votre article a bien été supprimé');
     }
-    
+
 }
