@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
-
+                @if(Auth::user()->id == $profile->id)
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Modifier mon profil</h4>
@@ -54,6 +54,14 @@
                         <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
                     </div>
                 </div>
+                @else
+                    <div class="alert-danger alert">
+                        <div class="text-center">
+                            <p>Ce n'est pas votre profil</p>
+                        </div>
+                        <a href="{{ route('profile.show', Auth::user()->id) }}">Retour à mon profil</a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

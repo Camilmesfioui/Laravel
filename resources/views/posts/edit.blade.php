@@ -5,56 +5,61 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
+                @if(Auth::check()
+                    && (Auth::user()->id == $post->user_id
+                    || Auth::user()->isAdmin)
+                )
                 <div class="panel panel-default">
                     <div class="panel-heading">
                        <h4>Modifier article</h4>
                     </div>
 
                     <div class="panel-body">
-                        @if(Auth::check()
-                        && (Auth::user()->id == $post->user_id
-                        || Auth::user()->isAdmin))
+                        {!! Form::model($post,
+                        array(
+                        'route' => array('post.update', $post->id),
+                        'method' => 'PUT'
+                        )) !!}
 
-                            {!! Form::model($post,
-                            array(
-                            'route' => array('post.update', $post->id),
-                            'method' => 'PUT'
-                            )) !!}
+                        <div class="form-group">
 
-                            <div class="form-group">
+                            {!! Form::label('title', 'Titre') !!}
+                            {!! Form::text('title', old('title'), [
+                                'class' => 'form-control',
+                                'placeholder' => 'Mon titre'
+                                ])
+                            !!}
+                        </div>
 
-                                {!! Form::label('title', 'Titre') !!}
-                                {!! Form::text('title', old('title'), [
-                                    'class' => 'form-control',
-                                    'placeholder' => 'Mon titre'
-                                    ])
-                                !!}
-                            </div>
+                        <div class="form-group">
 
-                            <div class="form-group">
+                            {!! Form::label('content', 'Contenu') !!}
+                            {!! Form::textarea('content', old('content'), [
+                                'class' => 'form-control',
+                                'placeholder' => 'Mon contenu'
+                                ])
+                            !!}
+                        </div>
 
-                                {!! Form::label('content', 'Contenu') !!}
-                                {!! Form::textarea('content', old('content'), [
-                                    'class' => 'form-control',
-                                    'placeholder' => 'Mon contenu'
-                                    ])
-                                !!}
-                            </div>
-
+                        <div class="text-center">
                             {!! Form::submit('Modifier l\'article',
-                            ['class' => 'btn btn-primary'])
-                             !!}
+                                ['class' => 'btn btn-primary'])
+                            !!}
+                        </div>
 
-                            {!! Form::close() !!}
-
-                        @else
-                            <p>Vous n'avez pas les droits nécessaires</p>
-                            <a href="{{ route('post.show', $post->id) }}" class="text-center">
-                                Retour à l'article
-                            </a>
-                        @endif
+                        {!! Form::close() !!}
                     </div>
                 </div>
+                @else
+                    <div class="alert-danger alert">
+                        <div class="text-center">
+                            <p>Vous n'avez pas les droits nécessaires</p>
+                        </div>
+                        <a href="{{ route('post.show', $post->id) }}" class="text-center">
+                            Retour à l'article
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
