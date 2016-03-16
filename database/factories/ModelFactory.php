@@ -54,6 +54,6 @@ $factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
         'goals' => $faker->text,
         'constraints' => $faker->text,
         'user_id' => $faker->numberBetween(1,20),
-        'status' => "En attente d'une réponse"
+        'status' => 0
     ];
 });

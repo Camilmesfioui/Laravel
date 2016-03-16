@@ -13,17 +13,15 @@
         {!! Form::label('status', 'Statut') !!}
 
         <div class="col-md-offset-1">
-            {!! Form::radio('status', "Projet refusé", [
-                'value' => $project->status
-                ])
-            !!}
-            Refuser le projet
-            <br>
-            {!! Form::radio('status', "En attente d'une réponse")
+            {!! Form::radio('status', 0)
             !!}
             En attente d'une réponse
             <br>
-            {!! Form::radio('status', "Projet accepté")
+            {!! Form::radio('status', 1)
+            !!}
+            Refuser le projet
+            <br>
+            {!! Form::radio('status', 2)
             !!}
             Accepter le projet
             <br>

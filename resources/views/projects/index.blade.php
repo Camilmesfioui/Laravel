@@ -13,7 +13,15 @@
                             <a href="{{ route('project.show', $project->id) }}">
                                <h4>{{ $project->project_name}}</h4>
                             </a>
-                            <h5 class="text-right">{{$project->status}}</h5>
+                            <div class="text-right">
+                                @if($project->status == 0)
+                                    <h5>En attente d'une réponse</h5>
+                                @elseif($project->status == 1)
+                                    <h5>Projet refusé</h5>
+                                @elseif($project->status == 2)
+                                    <h5>Project accepté</h5>
+                                @endif
+                            </div>
                         </div>
 
                         <div class="panel-body">
