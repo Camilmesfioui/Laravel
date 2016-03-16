@@ -7,49 +7,48 @@
                 @include('errors.message')
                 @if(Auth::check()
                     && (Auth::user()->id == $post->user_id
-                    || Auth::user()->isAdmin)
-                )
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                       <h4>Modifier article</h4>
+                    || Auth::user()->isAdmin))
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Modifier article</h4>
+                        </div>
+
+                        <div class="panel-body">
+                            {!! Form::model($post,
+                            array(
+                            'route' => array('post.update', $post->id),
+                            'method' => 'PUT'
+                            )) !!}
+
+                            <div class="form-group">
+
+                                {!! Form::label('title', 'Titre') !!}
+                                {!! Form::text('title', old('title'), [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Mon titre'
+                                    ])
+                                !!}
+                            </div>
+
+                            <div class="form-group">
+
+                                {!! Form::label('content', 'Contenu') !!}
+                                {!! Form::textarea('content', old('content'), [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Mon contenu'
+                                    ])
+                                !!}
+                            </div>
+
+                            <div class="text-center">
+                                {!! Form::submit('Modifier l\'article',
+                                    ['class' => 'btn btn-primary'])
+                                !!}
+                            </div>
+
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-
-                    <div class="panel-body">
-                        {!! Form::model($post,
-                        array(
-                        'route' => array('post.update', $post->id),
-                        'method' => 'PUT'
-                        )) !!}
-
-                        <div class="form-group">
-
-                            {!! Form::label('title', 'Titre') !!}
-                            {!! Form::text('title', old('title'), [
-                                'class' => 'form-control',
-                                'placeholder' => 'Mon titre'
-                                ])
-                            !!}
-                        </div>
-
-                        <div class="form-group">
-
-                            {!! Form::label('content', 'Contenu') !!}
-                            {!! Form::textarea('content', old('content'), [
-                                'class' => 'form-control',
-                                'placeholder' => 'Mon contenu'
-                                ])
-                            !!}
-                        </div>
-
-                        <div class="text-center">
-                            {!! Form::submit('Modifier l\'article',
-                                ['class' => 'btn btn-primary'])
-                            !!}
-                        </div>
-
-                        {!! Form::close() !!}
-                    </div>
-                </div>
                 @else
                     <div class="alert-danger alert">
                         <div class="text-center">

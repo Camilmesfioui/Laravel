@@ -35,6 +35,8 @@
             !!}
         </div>
 
+        <br>
+
         <div class="form-group">
             {!! Form::close() !!}
 
@@ -42,6 +44,11 @@
                 'route' => array('project.destroy', $project->id),
                 'method' => 'DELETE'))
             !!}
+
+            <div class="text-center">
+                {!! Form::submit('Supprimer le projet', ['class' => 'btn btn-danger']) !!}
+            </div>
+
             {!! Form::close() !!}
         </div>
 

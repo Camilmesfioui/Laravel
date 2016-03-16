@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function __construct() {
 
         $this->middleware('auth')->only('create');
-//        $this->middleware('isadmin')->only('index', 'show', 'edit', 'destroy');
+        $this->middleware('isadmin')->only('index');
 
     }
 
@@ -114,7 +114,7 @@ class ProjectController extends Controller
         $input = $request->input();
         $project->fill($input)->save();
 
-        return redirect()->route('project.index')->with('success', 'Votre modification a bien étée prise en compte');
+        return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
     }
 
     /**
@@ -131,6 +131,5 @@ class ProjectController extends Controller
 
         return redirect()->route('project.index')->with('success', 'Votre article a bien été supprimé');
     }
-
-
+    
 }
