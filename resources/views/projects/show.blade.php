@@ -40,7 +40,7 @@
                         <h3>Adresse email du contact</h3>
                         <p>{{ $project->contact_email }}</p>
 
-                        <h3>Numéro de télphone du client</h3>
+                        <h3>Numéro de télphone du contact</h3>
                         <p>{{ $project->contact_numberphone }}</p>
 
                         <h3>Fiche d'identité</h3>
@@ -58,7 +58,34 @@
                         <h3>Contraintes</h3>
                         <p>{{ $project->constraints }}</p>
                     </div>
-                    @include('projects.edit')
+                    @if(Auth::check() && Auth::user()->isAdmin)
+                    @include('projects.status')
+                    @endif
+                    @if(Auth::check()
+                        && (Auth::user()->id == $project->user_id
+                        || Auth::user()->isAdmin))
+                    <div class="panel-heading">
+                        <h4>Gérer le projet</h4>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="text-center">
+                            {!! Form::model($project,array(
+                                'route' => array('project.destroy', $project->id),
+                                'method' => 'DELETE'))
+                            !!}
+                            <br>
+                            <a href="{{ route('project.edit', $project->id) }}" class="btn btn-warning">Modifier projet</a>
+                            {!! Form::submit('Supprimer le projet', ['class' => 'btn btn-danger']) !!}
+
+                            {!! Form::close() !!}
+                        </div>
+
+                    </div>
+                    @endif
+                    <div class="panel-body">
+                        <a href="{{ route('project.index') }}">Retour à la liste des projets</a>
+                    </div>
                 </div>
             </div>
         </div>
