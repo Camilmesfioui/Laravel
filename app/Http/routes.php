@@ -46,6 +46,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/profile', 'ProfileController');
 
+    Route::get('/edit_password', function() {
+        return view('profiles.editPassword', compact(Auth::user()->id));
+    });
+
     Route::get('/admin', function() {
        return 'admin';
     })->middleware('isadmin');

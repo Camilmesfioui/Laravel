@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfileController extends Controller
 {
@@ -85,10 +82,6 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-        ]);
 
         $profile = User::findOrFail($id);
         $input = $request->input();

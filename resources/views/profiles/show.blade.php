@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
-                @if(Auth::user()->id == $profile->id)
+                @if(Auth::check() && Auth::user()->id == $profile->id)
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h4>Mes informations</h4>
@@ -64,8 +64,8 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
-                    @include('profile.showPosts')
-                    @include('profile.showProjects')
+                    @include('profiles.showPosts')
+                    @include('profiles.showProjects')
                 @else
                     <div class="alert-danger alert">
                         <div class="text-center">

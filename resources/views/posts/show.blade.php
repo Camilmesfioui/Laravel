@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
-                <div class="panel panel-default">
+                <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3>{{ $post->title }}</h3>
                         <div class="text-right">
@@ -30,10 +30,8 @@
                                 {!! Form::close() !!}
                             @endif
                         </div>
+                        <br>
                         @include('comments.show')
-                        @if(Auth::check())
-                            @include('comments.create')
-                        @endif
                         <a href="{{ route('post.index') }}">Retour aux articles</a>
                     </div>
                 </div>

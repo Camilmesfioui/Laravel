@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function __construct() {
 
         $this->middleware('auth')->only('create');
-        $this->middleware('isadmin')->only('index', 'show', 'edit', 'destroy');
+        $this->middleware('isadmin')->only('index');
 
     }
 
@@ -96,7 +96,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -108,15 +109,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'status' => 'required'
-        ]);
 
         $project = Project::findOrFail($id);
         $input = $request->input();
         $project->fill($input)->save();
 
-        return redirect()->route('project.index')->with('success', 'Votre modification a bien étée prise en compte');
+        return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
     }
 
     /**

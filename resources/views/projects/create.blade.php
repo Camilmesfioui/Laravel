@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             {!! Form::label('customer_numberphone', 'Numéro de téléphone du client') !!}
-                            {!! Form::number('customer_numberphone', '', [
+                            {!! Form::text('customer_numberphone', '', [
                                 'class' => 'form-control',
                                 'placeholder' => '06.42.13.37.69'
                                 ])
@@ -90,7 +90,7 @@
 
                         <div class="form-group">
                             {!! Form::label('contact_numberphone', 'Numéro de téléphone du contact') !!}
-                            {!! Form::number('contact_numberphone', '', [
+                            {!! Form::text('contact_numberphone', '', [
                                 'class' => 'form-control',
                                 'placeholder' => '06.42.13.37.69'
                                 ])
