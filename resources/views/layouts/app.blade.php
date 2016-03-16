@@ -58,6 +58,9 @@
                     @if(Auth::check() && Auth::user()->isAdmin)
                     <li><a href="{{ route('project.index') }}">Liste des projets</a></li>
                     @endif
+                    @if(Auth::user()->isAdmin)
+                        <li><a href="{{ route('profile.index') }}">Liste des utilisateurs</a></li>
+                    @endif
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                 </ul>
 
