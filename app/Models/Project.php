@@ -9,11 +9,11 @@ class Project extends Model
     protected $fillable = [
         'project_name',
         'customer_infos',
-        'customer_adress',
+        'customer_address',
         'customer_email',
         'customer_numberphone',
         'contact_infos',
-        'contact_adress',
+        'contact_address',
         'contact_email',
         'contact_numberphone',
         'identity_sheet',

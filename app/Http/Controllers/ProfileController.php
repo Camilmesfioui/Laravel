@@ -12,6 +12,13 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfileController extends Controller
 {
+
+    public function __construct() {
+
+        $this->middleware('auth')->only(['show', 'edit']);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -99,9 +106,4 @@ class ProfileController extends Controller
         //
     }
 
-    public function showPosts() {
-        $user = Auth::user()->id;
-        $list = Post::where('user_id' == $user);
-        return view('profile.showPosts', compact('list'));
-    }
 }
