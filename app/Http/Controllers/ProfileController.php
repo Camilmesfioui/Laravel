@@ -60,7 +60,7 @@ class ProfileController extends Controller
     public function show($id)
     {
         $profile = User::findOrFail($id);
-        return view('profile.show', compact('profile'));
+        return view('profiles.show', compact('profile'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = User::findOrFail($id);
-        return view('profile.edit', compact('profile'));
+        return view('profiles.edit', compact('profile'));
     }
 
     /**
