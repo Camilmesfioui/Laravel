@@ -10,11 +10,11 @@
                         <h3>{{ $project->project_name}}</h3>
                         <div class="text-right">
                             @if($project->status == 0)
-                                <h4>En attente d'une réponse</h4>
+                                <h4>En attente d'une réponse <i class="fa fa-circle-o"></i></h4>
                             @elseif($project->status == 1)
-                                <h4>Projet refusé</h4>
+                                <h4>Projet refusé <i class="fa fa-times"></i></h4>
                             @elseif($project->status == 2)
-                                <h4>Project accepté</h4>
+                                <h4>Project accepté <i class="fa fa-check"></i></h4>
                             @endif
                         </div>
                     </div>
