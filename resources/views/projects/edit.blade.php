@@ -15,7 +15,7 @@
         <div class="col-md-offset-1">
             {!! Form::radio('status', 0)
             !!}
-            En attente d'une réponse 
+            En attente d'une réponse
             <br>
             {!! Form::radio('status', 1)
             !!}
