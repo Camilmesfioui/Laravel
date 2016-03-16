@@ -7,7 +7,7 @@
                 @include('errors.message')
             </div>
 
-            @foreach($user as $profile)
+            @foreach($users as $profile)
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -40,9 +40,9 @@
                     </div>
                 </div>
             @endforeach
-            {{--<div class="text-center">--}}
-                {{--{!! $list->links() !!}--}}
-            {{--</div>--}}
+            <div class="text-center">
+                {!! $users->links() !!}
+            </div>
         </div>
     </div>
 @endsection
