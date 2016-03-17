@@ -27,32 +27,33 @@
             <br>
         </div>
 
-        <br>
+    </div>
+
+    <br>
+
+    <div class="text-center">
+        {!! Form::submit('Enregistrer la réponse',
+            ['class' => 'btn btn-primary'])
+        !!}
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        {!! Form::close() !!}
+
+        {!! Form::model($project,array(
+            'route' => array('project.destroy', $project->id),
+            'method' => 'DELETE'))
+        !!}
 
         <div class="text-center">
-            {!! Form::submit('Enregistrer la réponse',
-                ['class' => 'btn btn-primary'])
-            !!}
+            {!! Form::submit('Supprimer le projet', ['class' => 'btn btn-danger']) !!}
         </div>
 
-        <br>
-
-        <div class="form-group">
-            {!! Form::close() !!}
-
-            {!! Form::model($project,array(
-                'route' => array('project.destroy', $project->id),
-                'method' => 'DELETE'))
-            !!}
-
-            <div class="text-center">
-                {!! Form::submit('Supprimer le projet', ['class' => 'btn btn-danger']) !!}
-            </div>
-
-            {!! Form::close() !!}
-        </div>
-
+        {!! Form::close() !!}
     </div>
+
 </div>
 
 

@@ -48,6 +48,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/password', 'PasswordController');
 
+    Route::resource('/admin', 'AdminController');
+
     Route::get('/admin', function() {
        return 'admin';
     })->middleware('isadmin');

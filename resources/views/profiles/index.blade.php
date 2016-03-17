@@ -28,7 +28,7 @@
 
 
                             <div class="text-center">
-                                <a class="btn btn-warning" href="{{ route('profile.edit', Auth::user()->id) }}">
+                                <a class="btn btn-warning" href="{{ route('admin.edit', $profile->id) }}">
                                     Gérer les droits
                                 </a>
 
