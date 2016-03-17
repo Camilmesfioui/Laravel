@@ -46,6 +46,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/profile', 'ProfileController');
 
+    Route::resource('/password', 'PasswordController');
 
     Route::get('/admin', function() {
        return 'admin';

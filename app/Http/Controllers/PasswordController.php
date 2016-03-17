@@ -6,17 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Hash;
 
-class ProfileController extends Controller
+class PasswordController extends Controller
 {
-
-    public function __construct() {
-
-        $this->middleware('auth')->only('show', 'edit');
-        $this->middleware('isadmin')->only('index');
-
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +17,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(5);
-        return view('profiles.index', compact('users'));
+        //
     }
 
     /**
@@ -57,8 +49,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $profile = User::findOrFail($id);
-        return view('profiles.show', compact('profile'));
+        //
     }
 
     /**
@@ -70,9 +61,8 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = User::findOrFail($id);
-        return view('profiles.edit', compact('profile'));
+        return view('profiles.editPassword', compact('profile'));
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -83,9 +73,9 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $profile = User::findOrFail($id);
         $input = $request->input();
+        $input['password'] = Hash::make($request->password);
         $profile->fill($input)->save();
 
         return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
@@ -99,11 +89,6 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        $profile = User::findOrFail($id);
-
-        $profile->delete();
-
-        return redirect()->route('post.index')->with('success', 'Votre profil a bien été supprimé');
+        //
     }
-
 }

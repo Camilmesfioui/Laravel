@@ -54,7 +54,7 @@
                         <br>
 
                         <div class="text-center">
-                            <a href="{{ url('edit_password', Auth::user()->id) }}">Modifier mon mot de passe</a>
+                            <a href="{{ route('password.edit', Auth::user()->id) }}">Modifier mon mot de passe</a>
                         </div>
 
                         <br>
