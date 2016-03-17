@@ -71,7 +71,7 @@
                             {!! Form::close() !!}
 
                             <br>
-                            
+
                             <a href="{{ route('profile.index', Auth::user()->id) }}">Retourner sur la liste des utilisateurs</a>
                         </div>
                     </div>

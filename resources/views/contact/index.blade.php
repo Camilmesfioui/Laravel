@@ -14,27 +14,27 @@
                         {!! Form::open(array('route' => 'contact_store', 'class' => 'form')) !!}
 
                         <div class="form-group">
-                            {!! Form::label('Votre Nom') !!}
+                            {!! Form::label('name', 'Votre nom') !!}
                             {!! Form::text('name', null,
                                 array('required',
                                       'class'=>'form-control',
-                                      'placeholder'=>'Votre Nom')) !!}
+                                      'placeholder'=>'Votre nom')) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('Votre adresse E-Mail') !!}
+                            {!! Form::label('email', 'Votre adresse e-mail') !!}
                             {!! Form::email('email', null,
                                 array('required',
                                       'class'=>'form-control',
-                                      'placeholder'=>'Votre adresse E-Mail')) !!}
+                                      'placeholder'=>'Votre adresse e-mail')) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('Votre Message') !!}
+                            {!! Form::label('message', 'Votre message') !!}
                             {!! Form::textarea('message', null,
                                 array('required',
                                       'class'=>'form-control',
-                                      'placeholder'=>'Votre Message')) !!}
+                                      'placeholder'=>'Votre message')) !!}
                         </div>
 
                        <div class="text-center">
