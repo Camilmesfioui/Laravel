@@ -73,6 +73,10 @@ class PasswordController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'password' => 'required'
+        ]);
+
         $profile = User::findOrFail($id);
         $input = $request->input();
         $input['password'] = Hash::make($request->password);
