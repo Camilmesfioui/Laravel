@@ -24,7 +24,7 @@
                         <div class="panel-body">
                             {!! Form::model($profile,
                             array(
-                                'route' => array('profile.destroy', $profile->id),
+                                'route' => array('admin.destroy', $profile->id),
                                 'method' => 'DELETE'))
                             !!}
 

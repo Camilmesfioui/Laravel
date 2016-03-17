@@ -110,7 +110,7 @@ class PostController extends Controller
         $input = $request->input();
         $post->fill($input)->save();
 
-        return redirect()->route('post.index')->with('success', 'Votre modification a bien étée prise en compte');
+        return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
     }
 
     /**

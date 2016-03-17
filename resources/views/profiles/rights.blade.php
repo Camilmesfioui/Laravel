@@ -78,7 +78,7 @@
                 @else
                     <div class="alert-danger alert">
                         <div class="text-center">
-                            <p>Ce n'est pas votre profil</p>
+                            <p>Vous n'avez pas les droits nécessaires</p>
                         </div>
                         <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
                     </div>

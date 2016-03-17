@@ -47,6 +47,10 @@
                             </div>
 
                             {!! Form::close() !!}
+
+                            <a href="{{route('post.show', $post->id)}}">
+                                Retour à l'article
+                            </a>
                         </div>
                     </div>
                 @else

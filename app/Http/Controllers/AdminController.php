@@ -91,6 +91,10 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $profile = User::findOrFail($id);
+
+        $profile->delete();
+
+        return redirect()->back()->with('success', 'Le profil a bien été supprimé');
     }
 }
