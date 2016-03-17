@@ -64,8 +64,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('project.index') }}">Liste des projets</a></li>
-                                <li><a href="{{ route('profile.index') }}">Liste des utilisateurs</a></li>
+                                <li><a href="{{ route('project.index') }}"><i class="fa fa-list-alt"></i> Projets</a></li>
+                                <li><a href="{{ route('profile.index') }}"><i class="fa fa-users"></i> Utilisateurs</a></li>
                             </ul>
                         </li>
                     @endif
