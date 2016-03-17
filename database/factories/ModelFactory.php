@@ -48,7 +48,7 @@ $factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
         'contact_email' => $faker->email,
         'contact_numberphone' => $faker->phoneNumber,
         'identity_sheet' => $faker->text,
-        'project_type' => "autre",
+        'project_type' => "Autre",
         'context' => $faker->text,
         'request' => $faker->text,
         'goals' => $faker->text,

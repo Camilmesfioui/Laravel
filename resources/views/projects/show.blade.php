@@ -62,7 +62,16 @@
                             <p>{{ $project->constraints }}</p>
 
                         </div>
-                        @if(Auth::check() && Auth::user()->isAdmin)
+                        @if(Auth::check() && (Auth::user()->isAdmin) && (Auth::user()->id == $project->user_id))
+                            <div class="text-center">
+                                <a href="{{ route('project.edit', $project->id) }}" class="btn btn-warning">Modifier projet</a>
+                            </div>
+                            <br>
+                            @include('projects.status')
+                            <div class="panel-body">
+                                <a href="{{ route('project.index') }}">Retour à la liste des projets</a>
+                            </div>
+                        @elseif(Auth::check() && Auth::user()->isAdmin)
                             @include('projects.status')
                             <div class="panel-body">
                                 <a href="{{ route('project.index') }}">Retour à la liste des projets</a>
