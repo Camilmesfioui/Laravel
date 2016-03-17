@@ -107,6 +107,6 @@ class ProfileController extends Controller
 
         $profile->delete();
 
-        return redirect()->route('post.index')->with('success', 'Votre profil a bien été supprimé');
+        return redirect()->route('post.index')->with('success', 'Le profil a bien été supprimé');
     }
 }

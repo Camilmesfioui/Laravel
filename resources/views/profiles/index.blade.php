@@ -31,10 +31,10 @@
 
                             <div class="text-center">
                                 <a class="btn btn-warning" href="{{ route('admin.edit', $profile->id) }}">
-                                    Gérer les droits
+                                    Gérer droits
                                 </a>
 
-                                {!! Form::submit('Supprimer le profil', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::submit('Supprimer utilisateur', ['class' => 'btn btn-danger']) !!}
                             </div>
 
                             {!! Form::close() !!}
