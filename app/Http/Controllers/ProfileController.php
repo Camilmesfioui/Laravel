@@ -73,6 +73,12 @@ class ProfileController extends Controller
         return view('profiles.edit', compact('profile'));
     }
 
+    public function editPassword($id) {
+
+        $profile = User::findOrFail($id);
+        return view('profiles.editPassword', compact('profile'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
