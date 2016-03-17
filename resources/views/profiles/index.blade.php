@@ -11,9 +11,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="">
-                                <h4>{{ $profile->name }}</h4>
-                            </a>
+                            <h4>{{ $profile->name }}</h4>
                             <div class="text-right">
                                 <p>Utilisateur</p>
                             </div>

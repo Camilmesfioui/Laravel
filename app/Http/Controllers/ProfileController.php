@@ -109,5 +109,4 @@ class ProfileController extends Controller
 
         return redirect()->route('post.index')->with('success', 'Votre profil a bien été supprimé');
     }
-
 }
