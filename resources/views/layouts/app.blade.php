@@ -47,7 +47,6 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Accueil</a></li>
                     <li><a href="{{ route('post.index') }}">Articles</a></li>
                     @if(Auth::check())
                         <li><a href="{{ route('post.create') }}">Rédiger un article</a></li>
@@ -55,18 +54,21 @@
                     @if(Auth::check())
                         <li><a href="{{ route('project.create') }}">Soumettre un projet</a></li>
                     @endif
-                    @if(Auth::check() && Auth::user()->isAdmin)
-                    <li><a href="{{ route('project.index') }}">Liste des projets</a></li>
-                    @endif
-                    @if(Auth::check() && Auth::user()->isAdmin)
-                        <li><a href="{{ route('profile.index') }}">Liste des utilisateurs</a></li>
-                    @endif
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
+                    @if(Auth::check() && Auth::user()->isAdmin)
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('project.index') }}">Liste des projets</a></li>
+                                <li><a href="{{ route('profile.index') }}">Liste des utilisateurs</a></li>
+                            </ul>
+                        </li>
+                    @endif
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Connection</a></li>
                         <li><a href="{{ url('/register') }}">S'enregistrer</a></li>

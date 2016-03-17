@@ -15,11 +15,11 @@
                             </a>
                             <div class="text-right">
                                 @if($project->status == 0)
-                                    <h5>En attente d'une réponse <i class="fa fa-circle-o"></i></h5>
+                                    <h5>En attente d'une réponse <i class="fa fa-2x fa-circle-o"></i></h5>
                                 @elseif($project->status == 1)
-                                    <h5>Projet refusé <i class="fa fa-times"></i></h5>
+                                    <h5>Projet refusé <i class="fa fa-2x fa-times"></i></h5>
                                 @elseif($project->status == 2)
-                                    <h5>Project accepté <i class="fa fa-check"></i></h5>
+                                    <h5>Project accepté <i class="fa fa-2x fa-check"></i></h5>
                                 @endif
                             </div>
                         </div>

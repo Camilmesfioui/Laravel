@@ -13,7 +13,11 @@
                         <div class="panel-heading">
                             <h4>{{ $profile->name }}</h4>
                             <div class="text-right">
-                                <p>Utilisateur</p>
+                                @if($profile->isAdmin == 0)
+                                    <h5>Simple utilisateur <i class="fa fa-2x fa-user"></i></h5>
+                                @elseif($profile->isAdmin == 1)
+                                    <h5>Administrateur <i class="fa fa-2x fa-user-secret"></i></h5>
+                                @endif
                             </div>
                         </div>
 

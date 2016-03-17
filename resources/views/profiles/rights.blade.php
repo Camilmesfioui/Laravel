@@ -14,7 +14,7 @@
 
                             {!! Form::model($profile,
                             array(
-                            'route' => array('profile.update', $profile->id),
+                            'route' => array('admin.update', $profile->id),
                             'method' => 'PUT',
                             'class' => 'form-horizontal'
                             )) !!}

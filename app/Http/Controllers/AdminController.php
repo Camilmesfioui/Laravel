@@ -72,7 +72,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'isAdmin' => 'required',
+        ]);
+
+        $profile = User::findOrFail($id);
+        $input = $request->input();
+        $profile->fill($input)->save();
+
+        return redirect()->route('profile.index')->with('success', 'Votre modification a bien étée prise en compte');
     }
 
     /**
