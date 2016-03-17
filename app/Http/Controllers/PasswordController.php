@@ -74,7 +74,7 @@ class PasswordController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed|min:6',
         ]);
 
         $profile = User::findOrFail($id);

@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                {!! Form::label('password_confirmation', 'Confirmer mot de passe', [
+                                {!! Form::label('password_confirmation', 'Confirmer nouveau mot de passe', [
                                 'class' => 'col-md-4 control-label'
                                 ]) !!}
                                 <div class="col-md-5">
