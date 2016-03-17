@@ -50,7 +50,18 @@
                                 'class' => 'col-md-4 control-label'
                                 ]) !!}
                                 <div class="col-md-5">
-                                    {!! Form::text('password', '', [
+                                    {!! Form::password('password', [
+                                    'class' => 'form-control'
+                                    ])
+                                !!}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('password_confirmation', 'Confirmer mot de passe', [
+                                'class' => 'col-md-4 control-label'
+                                ]) !!}
+                                <div class="col-md-5">
+                                    {!! Form::password('password_confirmation',  [
                                     'class' => 'form-control'
                                     ])
                                 !!}
