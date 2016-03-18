@@ -80,6 +80,21 @@
                             <div class="text-center">
                                 <a href="{{ route('project.edit', $project->id) }}" class="btn btn-warning">Modifier projet</a>
                             </div>
+                            <br>
+                            <div class="form-group">
+                                {!! Form::close() !!}
+
+                                {!! Form::model($project,array(
+                                    'route' => array('project.destroy', $project->id),
+                                    'method' => 'DELETE'))
+                                !!}
+
+                                <div class="text-center">
+                                    {!! Form::submit('Supprimer le projet', ['class' => 'btn btn-danger']) !!}
+                                </div>
+
+                                {!! Form::close() !!}
+                            </div>
                             <div class="panel-body">
                                 <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur mon profil</a>
                             </div>
